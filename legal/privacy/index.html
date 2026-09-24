@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy | Morrisons AI Solutions</title>
+<meta name="description" content="Privacy policy for Morrisons AI Solutions products.">
+<meta name="theme-color" content="#000c1d">
+<link rel="canonical" href="https://morrisonsaisolutions.ie/legal/privacy/">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Morrisons AI Solutions">
+<meta property="og:title" content="Privacy policy | Morrisons AI Solutions">
+<meta property="og:description" content="Privacy policy for Morrisons AI Solutions products.">
+<meta property="og:url" content="https://morrisonsaisolutions.ie/legal/privacy/">
+<meta property="og:image" content="https://morrisonsaisolutions.ie/assets/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/apple-touch-icon.png" alt="" width="34" height="34"><span>Morrisons AI Solutions</span></a>
+    <nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/products/memory-mcp/">Memory MCP</a></li><li><a href="/about/">About</a></li><li><a href="/support/">Support</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<div class="wrap page-banner"><div class="hero-art"><img src="/assets/banner-slim.webp" width="1600" height="300" alt="Morrisons AI Solutions: intelligence today, a brighter tomorrow"></div></div>
+<div class="wrap prose"><h1>Privacy policy</h1>
+<p>This policy covers two separate things that are easy to conflate: what the
+memory-mcp <strong>software</strong> does with your data once installed, and what happens
+to your data during the <strong>purchase</strong> itself.</p>
+<h2>The software, once installed</h2>
+<p>memory-mcp is local-first by design. Everything it stores — memories,
+transcripts, the knowledge graph, the relationship ledger — lives in one
+SQLite file on your own device (<code>~/.memory_mcp/memory.db</code> by default). There
+is no cloud component, no telemetry, and no external network call in normal
+operation.</p>
+<p><strong>Your content is encrypted at rest by default</strong>, using AES-256-GCM, before
+it's ever written to that file — a copied database or backup holds
+ciphertext, not readable memories. This can be turned off
+(<code>MEMORY_MCP_CONTENT_ENCRYPTION_ENABLED=false</code>) if you have a reason to, but
+it's on unless you choose otherwise.</p>
+<p><strong>The one exception:</strong> the default embedding provider (FastEmbed) downloads
+its model from Hugging Face the first time it runs (roughly 50MB). After
+that first run, it's fully offline. If you explicitly configure
+<code>MEMORY_MCP_EMBEDDING_PROVIDER=api</code> to use an external embeddings API
+instead, memory <em>content</em> is sent to whatever API you configured — that is
+an explicit choice you make, not the default behavior.</p>
+<p><strong>Diagnostics are opt-in and off by default.</strong> If you turn them on
+(<code>MEMORY_MCP_DIAGNOSTICS_ENABLED=true</code>), a diagnostics snapshot contains only
+aggregate counts and version/platform strings — never memory content,
+transcript text, ledger claims, tags, or persona names. Nothing is sent
+anywhere automatically; exporting a diagnostics file writes it to your own
+disk for you to inspect and decide whether to share.</p>
+<p><strong>Licensing works the same way.</strong> memory-mcp does not phone home to verify
+your license, check for updates, or report usage. There is no license-key
+validation server call, on install or afterward — deliberately, to keep
+"local-first and private" true rather than aspirational.</p>
+<p>See the <a href="/products/memory-mcp/#security">Security &amp; privacy section of the product page</a>
+for the full technical detail, including consent categories and audit
+logging.</p>
+<h2>The purchase</h2>
+<p>Payment is processed by <strong>Lemon Squeezy</strong>, acting as merchant of record. When
+you buy memory-mcp, Lemon Squeezy — not this project — collects and processes
+your payment details, billing name, and email address, in order to complete
+the transaction, handle applicable sales tax/VAT, and let you re-download
+your purchase later. That data is governed by
+<a href="https://www.lemonsqueezy.com/privacy">Lemon Squeezy's own privacy policy</a>,
+not this one. This project only receives confirmation that a purchase was
+made, not your payment details.</p>
+<h2>Contact</h2>
+<p>Questions about this policy: morrisonsaisolutions@gmail.com</p></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Morrisons AI Solutions. <a href="mailto:morrisonsaisolutions@gmail.com">morrisonsaisolutions@gmail.com</a></div>
+    <ul aria-label="Legal"><li><a href="/legal/eula/">End user licence</a></li><li><a href="/legal/privacy/">Privacy policy</a></li><li><a href="/legal/refund/">Refund policy</a></li></ul>
+  </div>
+</footer>
+</body>
+</html>
