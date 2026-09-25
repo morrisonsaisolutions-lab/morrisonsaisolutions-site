@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://morrisonsaisolutions.ie/products/memory-mcp/">
 <meta property="og:image" content="https://morrisonsaisolutions.ie/assets/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v=0ed8dbf9a9">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -24,6 +24,7 @@
   <div class="wrap">
     <a class="brand" href="/"><img src="/assets/apple-touch-icon.png" alt="" width="34" height="34"><span>Morrisons AI Solutions</span></a>
     <nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/products/memory-mcp/" aria-current="page">Memory MCP</a></li><li><a href="/about/">About</a></li><li><a href="/support/">Support</a></li></ul></nav>
+    <a class="btn btn-sm nav-cta" href="/products/memory-mcp/">Get Memory MCP</a>
   </div>
 </header>
 <main id="main">
@@ -53,7 +54,7 @@
     <div class="card"><h3>Personas</h3><p>Give each agent its own persona and memory. Scope memories by user when a persona is shared, and let an agent keep a working or personal relationship with its user.</p></div>
     <div class="card"><h3>Nothing silently overwritten</h3><p>Corrections refute the old claim and add a new one. Forgetting archives a memory instead of erasing it. Commitments and repairs are tracked the same way.</p></div>
     <div class="card"><h3>You stay in control</h3><p>Per-user consent categories, an audit log of every read and write, and diagnostics that are off unless you turn them on.</p></div>
-    <div class="card"><h3>Works with your client</h3><p>Standard MCP over stdio, with HTTP available, and 60+ tools. Point any MCP-compatible agent at it.</p></div>
+    <div class="card"><h3>Works with your client</h3><p>Standard MCP over stdio, with HTTP available, and 74 tools. Point any MCP-compatible agent at it.</p></div>
   </div>
 </section>
 
@@ -108,6 +109,7 @@
   <h2 id="lim-h">Honest limitations</h2>
   <p class="section-intro">We would rather you know these before you buy.</p>
   <ul class="plain">
+    <li><strong>Back up your encryption keys.</strong> The key folder lives apart from the database, and an encrypted backup cannot be read without it. Your data and keys never leave your machine, so we cannot recover them for you.</li>
     <li><strong>Encrypted content cannot be keyword-searched.</strong> Recall uses semantic (meaning-based) search, which is the trade-off for encryption at rest.</li>
     <li><strong>The relationship safety check is a pattern list, not a semantic classifier.</strong> A sufficiently different phrasing can slip past it. It is a safeguard, not a guarantee.</li>
     <li><strong>De-duplication, decay and contradiction flagging are heuristics.</strong> They are not verified understanding.</li>
@@ -118,7 +120,7 @@
 
 <section class="wrap" aria-labelledby="install-h">
   <h2 id="install-h">Getting started</h2>
-  <p>After purchase you download the package from your order, and you can re-download it at any time. Install it with pip using the step-by-step instructions included, then point your MCP client at the <code>memory-mcp</code> command:</p>
+  <p>After purchase you download the package from your order, and you can re-download it at any time. Install it with pip using the step-by-step instructions included, then register it <strong>once, globally</strong>: add the full path of the <code>memory-mcp</code> command inside the environment you installed it into to your client's user-level (global) MCP settings, not to a single project or session. If it is only added to one session, your other sessions start without it and cannot reach your memory. Registered globally, every session in every folder shares the same memory:</p>
 <pre><code>{
   "mcpServers": {
     "memory": {
@@ -126,6 +128,7 @@
     }
   }
 }</code></pre>
+  <p>Your download also includes an <strong>Agent Manual</strong>, written to your AI agent. It covers installing and connecting, the rules for every turn, all 74 tools, triggers, hooks and skills, and comes with a rulebook skill and reference hooks for Claude Code.</p>
   <p>Updates arrive by re-downloading from your order. The software never checks for them itself.</p>
   <p>Questions first? <a href="/support/">Get in touch</a>.</p>
 </section>
@@ -133,8 +136,8 @@
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <div>&copy; 2026 Morrisons AI Solutions. <a href="mailto:morrisonsaisolutions@gmail.com">morrisonsaisolutions@gmail.com</a></div>
-    <ul aria-label="Legal"><li><a href="/legal/eula/">End user licence</a></li><li><a href="/legal/privacy/">Privacy policy</a></li><li><a href="/legal/refund/">Refund policy</a></li></ul>
+    <div>&copy; 2026 Morrisons AI Solutions. <a href="mailto:morrisonsaisolutions@gmail.com">morrisonsaisolutions@gmail.com</a><br><span class="foot-tag">Intelligence today &middot; A brighter tomorrow</span></div>
+    <ul aria-label="Legal"><li><a href="/legal/eula/">End user licence</a></li><li><a href="/legal/privacy/">Privacy policy</a></li><li><a href="/legal/refund/">Refund policy</a></li><li><a href="/legal/notice/">Legal notice</a></li></ul>
   </div>
 </footer>
 </body>
