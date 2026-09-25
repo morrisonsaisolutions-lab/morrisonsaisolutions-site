@@ -117,6 +117,12 @@ a.card:hover { border-color: var(--link); box-shadow: 0 0 40px -18px var(--accen
   background: linear-gradient(180deg, var(--bg-raised), var(--surface));
   border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.6rem; margin-top: 1.6rem;
 }
+.platform-note {
+  margin: 1.4rem 0 0; padding: .9rem 1.2rem; border-radius: var(--radius);
+  border: 1px solid #b8892b; background: rgba(184,137,43,.12);
+  color: var(--text-strong); font-size: clamp(1.1rem, 2.4vw, 1.5rem); line-height: 1.35;
+}
+.platform-note strong { color: #ffcf6b; }
 .buybox ul { list-style: none; margin: .7rem 0 0; padding: 0; color: var(--muted); font-size: .95rem; }
 .buybox li::before { content: "\2713"; color: var(--ok); margin-right: .55rem; }
 
