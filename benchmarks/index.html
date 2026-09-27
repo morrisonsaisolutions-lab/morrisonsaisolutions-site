@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benchmark findings | Morrisons AI Solutions</title>
+<meta name="description" content="Our published results running Memory MCP against the public LongMemEval recall benchmark.">
+<meta name="theme-color" content="#000c1d">
+<link rel="canonical" href="https://morrisonsaisolutions.ie/benchmarks/">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Morrisons AI Solutions">
+<meta property="og:title" content="Benchmark findings | Morrisons AI Solutions">
+<meta property="og:description" content="Our published results running Memory MCP against the public LongMemEval recall benchmark.">
+<meta property="og:url" content="https://morrisonsaisolutions.ie/benchmarks/">
+<meta property="og:image" content="https://morrisonsaisolutions.ie/assets/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/style.css?v=9b13ab5146">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/apple-touch-icon.png" alt="" width="34" height="34"><span>Morrisons AI Solutions</span></a>
+    <nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/products/memory-mcp/">Memory MCP</a></li><li><a href="/about/">About</a></li><li><a href="/support/">Support</a></li></ul></nav>
+    <a class="btn btn-sm nav-cta" href="/products/memory-mcp/">Get Memory MCP</a>
+  </div>
+</header>
+<main id="main">
+<div class="wrap page-banner"><div class="hero-art"><img src="/assets/banner-slim.webp" width="1600" height="300" alt="Morrisons AI Solutions: intelligence today, a brighter tomorrow"></div></div>
+<header class="wrap page-head">
+  <p class="eyebrow">Findings</p>
+  <h1>We tested our own claims.</h1>
+  <p class="lead">We ran Memory MCP against a public benchmark, exactly as we ship it, and we are publishing the numbers whether they flatter us or not.</p>
+</header>
+
+<section class="wrap" aria-labelledby="what-h">
+  <h2 id="what-h">What we ran</h2>
+  <p><a href="https://github.com/xiaowu0162/LongMemEval" rel="noopener">LongMemEval-S</a> is a public benchmark of 500 questions, each about a set of roughly 48 realistic chat sessions the answer is hidden inside. We stored every session in Memory MCP with its real <code>remember</code> tool, asked each question through its real <code>recall</code> tool, and checked whether the right session came back in the top 5 results. Nothing was mocked: the real embedding model, the real database, the shipped default of content encrypted at rest.</p>
+  <p>The test ran in a disposable database created only for this benchmark. No customer or personal data was involved.</p>
+</section>
+
+<section class="wrap" aria-labelledby="result-h">
+  <h2 id="result-h">The result</h2>
+  <div class="glance">
+    <div class="glance-stat"><strong>98%</strong><span>found the right memory in the top 5, one memory per message</span></div>
+  </div>
+  <p>Stored the way the product is meant to be used &mdash; one distilled fact or message per memory, not a whole conversation dumped in one go &mdash; Memory MCP found the correct session in its top 5 results for <strong>98.0%</strong> of the 500 questions (98.1% once the 30 unanswerable &ldquo;trick&rdquo; questions are set aside). Stored as whole sessions instead, which asks far more of the embedding model in one go, it still found <strong>93.0%</strong>.</p>
+  <table class="plain-table">
+    <thead><tr><th>Top results checked</th><th>One memory per message</th><th>One memory per whole session</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>89.6%</td><td>75.8%</td></tr>
+      <tr><td>3</td><td>96.0%</td><td>89.8%</td></tr>
+      <tr><td>5</td><td>98.0%</td><td>93.0%</td></tr>
+      <tr><td>10</td><td>98.6%</td><td>96.6%</td></tr>
+    </tbody>
+  </table>
+  <p>By question type (top 5, one memory per message): recalling something the assistant said, 100%; a fact that changed over time, 100%; something spread across several sessions, 98.5%; reasoning about when something happened, 94.7%; a stated preference, 100%; something the user said in a single session, 98.6%.</p>
+</section>
+
+<section class="wrap" aria-labelledby="honest-h">
+  <h2 id="honest-h">What this does and does not show</h2>
+  <ul class="plain">
+    <li>This measures retrieval &mdash; does the right memory come back &mdash; not the final answer a language model would give from it. The benchmark's own name for this is recall, not question-answering accuracy.</li>
+    <li>An embedding model reads only so much text at once. A whole 9,000-character chat session gets truncated before it is compared to your question, which is the real reason the session-level score is lower. Saving one memory per message, as we recommend, avoids that.</li>
+    <li>Content encryption was on throughout, our shipped default, so this is real-world behaviour, not a best case with protections switched off.</li>
+    <li>We ran this ourselves, on our own machine, in September 2026. We have not had it independently reproduced yet. If you want to check it, the benchmark is public and the method above is everything you need to repeat it.</li>
+  </ul>
+</section>
+
+<section class="wrap" aria-labelledby="next-h">
+  <h2 id="next-h">Why we're telling you this</h2>
+  <p>A small company selling a memory tool should be able to show its memory actually works. We would rather publish a real 98% than an unproven claim of something higher, and we will publish the next result too, better or worse.</p>
+  <p><a class="btn" href="/products/memory-mcp/">Back to Memory MCP</a></p>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Morrisons AI Solutions. <a href="mailto:morrisonsaisolutions@gmail.com">morrisonsaisolutions@gmail.com</a><br><span class="foot-tag">Intelligence today &middot; A brighter tomorrow</span></div>
+    <ul aria-label="Legal"><li><a href="/legal/eula/">End user licence</a></li><li><a href="/legal/privacy/">Privacy policy</a></li><li><a href="/legal/refund/">Refund policy</a></li><li><a href="/legal/notice/">Legal notice</a></li></ul>
+  </div>
+</footer>
+</body>
+</html>

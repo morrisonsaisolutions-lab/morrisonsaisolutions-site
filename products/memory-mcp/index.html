@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://morrisonsaisolutions.ie/products/memory-mcp/">
 <meta property="og:image" content="https://morrisonsaisolutions.ie/assets/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/style.css?v=ff7dc2db6f">
+<link rel="stylesheet" href="/assets/style.css?v=9b13ab5146">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -99,7 +99,7 @@
 <section class="wrap" aria-labelledby="need-h">
   <h2 id="need-h">What you need</h2>
   <ul class="plain">
-    <li>Python 3.11 or newer.</li>
+    <li>Python 3.11 or newer, whose SQLite is <strong>3.51.3 or newer</strong>. The Python that ships with Ubuntu 24.04 (3.12) is too old. The install steps use <code>uv</code> with Python 3.13, which brings a current SQLite. The server refuses to start on an older one, because older SQLite has a bug that can corrupt the database.</li>
     <li>An internet connection while installing and on first run. Installation pulls its dependencies, and the first run downloads a one-time embedding model of about 50&nbsp;MB. After that it runs fully offline.</li>
     <li>Developed and tested on Linux. <strong>Windows support is coming soon.</strong> macOS has not been tested.</li>
   </ul>
@@ -117,6 +117,7 @@
     <li><strong>It is built for one local user.</strong> It is not a multi-tenant system, and user scoping is bookkeeping, not authorisation.</li>
     <li><strong>File-permission hardening is tested on Linux only.</strong></li>
   </ul>
+  <p><a href="/benchmarks/">We tested our own recall claims against a public benchmark &mdash; see the results.</a></p>
 </section>
 
 <section class="wrap" aria-labelledby="install-h">
