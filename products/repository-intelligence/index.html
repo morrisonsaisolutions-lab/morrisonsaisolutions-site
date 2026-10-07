@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repository Intelligence | Morrisons AI Solutions</title>
+<meta name="description" content="Repository Intelligence is a read-only code map for AI agents, with a checkable proof for every answer. In development.">
+<meta name="theme-color" content="#000c1d">
+<link rel="canonical" href="https://morrisonsaisolutions.ie/products/repository-intelligence/">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Morrisons AI Solutions">
+<meta property="og:title" content="Repository Intelligence | Morrisons AI Solutions">
+<meta property="og:description" content="Repository Intelligence is a read-only code map for AI agents, with a checkable proof for every answer. In development.">
+<meta property="og:url" content="https://morrisonsaisolutions.ie/products/repository-intelligence/">
+<meta property="og:image" content="https://morrisonsaisolutions.ie/assets/share.jpg">
+<meta property="og:locale" content="en_IE">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Morrisons AI Solutions: a chrome M over a glowing brain. Intelligence today, a brighter tomorrow.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Repository Intelligence | Morrisons AI Solutions">
+<meta name="twitter:description" content="Repository Intelligence is a read-only code map for AI agents, with a checkable proof for every answer. In development.">
+<meta name="twitter:image" content="https://morrisonsaisolutions.ie/assets/share.jpg">
+
+
+<link rel="stylesheet" href="/assets/style.css?v=11f7aad136">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/apple-touch-icon.png" alt="" width="34" height="34"><span>Morrisons AI Solutions</span></a>
+    <nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/products/" aria-current="page">Products</a></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/about/">About</a></li><li><a href="/support/">Support</a></li></ul></nav>
+    <a class="btn btn-sm nav-cta" href="/products/memory-mcp/">Get Memory MCP</a>
+  </div>
+</header>
+<main id="main">
+<div class="wrap page-banner"><div class="hero-art"><img src="/assets/banner-slim.webp" width="1600" height="300" alt="Morrisons AI Solutions: intelligence today, a brighter tomorrow"></div></div>
+<header class="wrap page-head">
+  <p class="eyebrow">Product &middot; not for sale yet</p>
+  <h1>Repository Intelligence</h1>
+  <p class="lead">A read-only map of a codebase, built for AI agents and the people who work with them: what every file imports, what can be reached from a project&rsquo;s real entry points, and the proof for each answer.</p>
+  <p><span class="status status-dev">In development</span></p>
+</header>
+
+<section class="wrap" aria-labelledby="what-h">
+  <h2 id="what-h">What it is</h2>
+  <p class="section-intro">Ask an AI agent to tidy a project and it has to guess what is used and what is not. Repository Intelligence gives it facts to work from instead, each one with the file and line it came from.</p>
+  <div class="grid">
+    <div class="card"><h3>Read-only</h3><p>It reads your repository and never writes to it. Its own database must live outside the project being scanned, and it refuses otherwise.</p></div>
+    <div class="card"><h3>Evidence, not opinion</h3><p>Every answer carries its evidence: the file, the line, and how an import was resolved. If it cannot tell, it says so, and says why.</p></div>
+    <div class="card"><h3>Safe by design</h3><p>The tools that read your code run in a sandbox with no network. Your scripts are read as data and are never run.</p></div>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="how-h">
+  <h2 id="how-h">How it works</h2>
+  <p class="section-intro">Four steps, each one stored so it can be checked later.</p>
+  <ol class="plain">
+    <li><strong>Scan.</strong> It walks the repository without changing it, records every file with a content hash, respects ignore rules, and recognises a file that has only been renamed or moved.</li>
+    <li><strong>Analyse.</strong> It reads every import, re-export, <code>require</code> and dynamic import in JavaScript and TypeScript, using the real TypeScript compiler and the project&rsquo;s own <code>tsconfig</code>, so paths resolve the way the project itself says they should. Python support is being built.</li>
+    <li><strong>Reach.</strong> It finds the entry points a project declares (<code>package.json</code> <code>main</code>, <code>exports</code> and <code>bin</code>, the files its scripts use, and its tests), follows the imports, and gives each reached file the shortest chain of imports back to an entry point. We call that chain a <em>witness</em>.</li>
+    <li><strong>Re-check.</strong> A separate, sandboxed checker re-verifies any witness from the files on disk, so you do not have to trust the first run.</li>
+  </ol>
+</section>
+
+<section class="wrap" aria-labelledby="why-h">
+  <h2 id="why-h">Why it works this way</h2>
+  <ul class="plain">
+    <li><strong>A claim you cannot check is a guess.</strong> That is why every answer comes with a witness.</li>
+    <li><strong>&ldquo;Not reached&rdquo; is not &ldquo;unused&rdquo;.</strong> A file nothing reaches is labelled <code>NOT_REACHED</code>, never &ldquo;orphaned&rdquo;. The run also says whether it can trust that nothing was missed, and if not, why. A false &ldquo;unused&rdquo; makes an agent delete live code, so we would rather say less.</li>
+    <li><strong>No claim without a test.</strong> We have set ourselves a rule: no &ldquo;this file is unused&rdquo; answers until they pass an accuracy test on real projects, compared against existing tools, with every disagreement explained.</li>
+  </ul>
+</section>
+
+<section class="wrap" aria-labelledby="today-h">
+  <h2 id="today-h">Where it is today</h2>
+  <div class="two-col">
+    <div>
+      <h3>Works now</h3>
+      <ul class="plain">
+        <li>Scanning, hashing and rename tracking.</li>
+        <li>Import analysis for JavaScript and TypeScript.</li>
+        <li>Reachability with a checkable witness for each file.</li>
+        <li>Use from the command line on a developer&rsquo;s machine.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Not yet</h3>
+      <ul class="plain">
+        <li>The MCP server interface.</li>
+        <li>Answers about unused code, which wait for the accuracy test above.</li>
+        <li>Full Python support.</li>
+        <li>A release date or a price. We will not guess at either.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note"><strong>Want to hear when it is ready?</strong> Write to <a href="mailto:morrisonsaisolutions@gmail.com">morrisonsaisolutions@gmail.com</a> and one of us will tell you.</div>
+  <p><a href="/products/">&larr; All our products</a></p>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Morrisons AI Solutions. <a href="mailto:morrisonsaisolutions@gmail.com">morrisonsaisolutions@gmail.com</a><br><span class="foot-tag">Intelligence today &middot; A brighter tomorrow</span></div>
+    <ul aria-label="Legal"><li><a href="/legal/eula/">End user licence</a></li><li><a href="/legal/privacy/">Privacy policy</a></li><li><a href="/legal/refund/">Refund policy</a></li><li><a href="/legal/notice/">Legal notice</a></li></ul>
+  </div>
+</footer>
+</body>
+</html>

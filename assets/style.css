@@ -420,3 +420,11 @@ body::before {
 @media (max-width: 1000px) { .tool-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 520px) { .tool-cards { grid-template-columns: 1fr; } }
 
+
+/* Status tags for products that are not on sale yet: plain words, no dates, no promises */
+.status { display: inline-block; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600;
+  padding: .3rem .7rem; border-radius: 999px; border: 1px solid var(--border); color: var(--silver); background: var(--surface); }
+.status-live { border-color: #2f9b6a; color: #8fe0b8; }
+.status-dev { border-color: var(--link); color: var(--link); }
+.status-design { border-color: #b08a2f; color: #ffcf6b; }
+.card .status { margin-bottom: .7rem; }

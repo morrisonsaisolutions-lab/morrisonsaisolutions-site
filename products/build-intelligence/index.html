@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Build Intelligence | Morrisons AI Solutions</title>
+<meta name="description" content="Build Intelligence helps an AI agent plan, run and verify builds, and keeps passing apart from verified. Design stage.">
+<meta name="theme-color" content="#000c1d">
+<link rel="canonical" href="https://morrisonsaisolutions.ie/products/build-intelligence/">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Morrisons AI Solutions">
+<meta property="og:title" content="Build Intelligence | Morrisons AI Solutions">
+<meta property="og:description" content="Build Intelligence helps an AI agent plan, run and verify builds, and keeps passing apart from verified. Design stage.">
+<meta property="og:url" content="https://morrisonsaisolutions.ie/products/build-intelligence/">
+<meta property="og:image" content="https://morrisonsaisolutions.ie/assets/share.jpg">
+<meta property="og:locale" content="en_IE">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Morrisons AI Solutions: a chrome M over a glowing brain. Intelligence today, a brighter tomorrow.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build Intelligence | Morrisons AI Solutions">
+<meta name="twitter:description" content="Build Intelligence helps an AI agent plan, run and verify builds, and keeps passing apart from verified. Design stage.">
+<meta name="twitter:image" content="https://morrisonsaisolutions.ie/assets/share.jpg">
+
+
+<link rel="stylesheet" href="/assets/style.css?v=11f7aad136">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/apple-touch-icon.png" alt="" width="34" height="34"><span>Morrisons AI Solutions</span></a>
+    <nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/products/" aria-current="page">Products</a></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/about/">About</a></li><li><a href="/support/">Support</a></li></ul></nav>
+    <a class="btn btn-sm nav-cta" href="/products/memory-mcp/">Get Memory MCP</a>
+  </div>
+</header>
+<main id="main">
+<div class="wrap page-banner"><div class="hero-art"><img src="/assets/banner-slim.webp" width="1600" height="300" alt="Morrisons AI Solutions: intelligence today, a brighter tomorrow"></div></div>
+<header class="wrap page-head">
+  <p class="eyebrow">Product &middot; not for sale yet</p>
+  <h1>Build Intelligence</h1>
+  <p class="lead">A service that helps an AI agent decide what to build and test, run it safely, and tell the difference between &ldquo;the tests passed&rdquo; and &ldquo;this is actually verified&rdquo;.</p>
+  <p><span class="status status-design">Design stage</span></p>
+</header>
+
+<section class="wrap" aria-labelledby="what-h">
+  <h2 id="what-h">What it is</h2>
+  <p class="section-intro">When an AI agent changes code, a green test run is often taken as the end of the story. Build Intelligence is designed to ask the harder questions: what should be built and tested, did the right things actually run, and is this change really verified?</p>
+  <div class="grid">
+    <div class="card"><h3>Plans and runs</h3><p>It works out what to build and test for a change, then runs it in a controlled way.</p></div>
+    <div class="card"><h3>Explains failures</h3><p>It sorts failures into the real ones, the flaky ones and the ones caused by the environment, and says which to fix first.</p></div>
+    <div class="card"><h3>Keeps the evidence</h3><p>Each verdict comes with the evidence behind it, kept so it can be inspected later.</p></div>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="how-h">
+  <h2 id="how-h">How it is designed to work</h2>
+  <p class="section-intro">Six tools, and deliberately no tool that runs arbitrary shell commands.</p>
+  <div class="table-scroll">
+    <table>
+      <thead><tr><th scope="col">Tool</th><th scope="col">What it does</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><code>build.open</code></th><td>Opens a build context for a project and a snapshot of its source.</td></tr>
+        <tr><th scope="row"><code>build.plan</code></th><td>Plans what to build and test, and why.</td></tr>
+        <tr><th scope="row"><code>build.run</code></th><td>Runs the plan in a controlled way.</td></tr>
+        <tr><th scope="row"><code>build.diagnose</code></th><td>Explains what failed, groups related failures, and ranks them.</td></tr>
+        <tr><th scope="row"><code>build.verify</code></th><td>Decides whether the change is verified, and says whether the evidence is current.</td></tr>
+        <tr><th scope="row"><code>build.evidence</code></th><td>Returns the evidence behind any verdict.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="wrap" aria-labelledby="why-h">
+  <h2 id="why-h">Why it works this way</h2>
+  <ul class="plain">
+    <li><strong>Passing is not the same as verified.</strong> A run can pass while the thing that matters was never tested. The design keeps the two apart: a result is <em>verified</em>, <em>verified with warnings</em>, <em>failed</em> or <em>incomplete</em>, and it says whether the evidence is current or out of date.</li>
+    <li><strong>No back door.</strong> There is no public tool that runs arbitrary commands, because a tool that can run anything is a tool that can be tricked into anything.</li>
+    <li><strong>It is designed to work alongside Repository Intelligence.</strong> One tells an agent how a codebase fits together, the other tells it whether a change to it is really safe.</li>
+  </ul>
+</section>
+
+<section class="wrap" aria-labelledby="today-h">
+  <h2 id="today-h">Where it is today</h2>
+  <div class="note"><strong>Design only.</strong> This exists as a written design and a fixed first-version contract. There is no working software yet, and we are not giving a release date or a price. We will say so on this page when that changes.</div>
+  <p>Want to hear when it moves on? Write to <a href="mailto:morrisonsaisolutions@gmail.com">morrisonsaisolutions@gmail.com</a>.</p>
+  <p><a href="/products/">&larr; All our products</a></p>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div>&copy; 2026 Morrisons AI Solutions. <a href="mailto:morrisonsaisolutions@gmail.com">morrisonsaisolutions@gmail.com</a><br><span class="foot-tag">Intelligence today &middot; A brighter tomorrow</span></div>
+    <ul aria-label="Legal"><li><a href="/legal/eula/">End user licence</a></li><li><a href="/legal/privacy/">Privacy policy</a></li><li><a href="/legal/refund/">Refund policy</a></li><li><a href="/legal/notice/">Legal notice</a></li></ul>
+  </div>
+</footer>
+</body>
+</html>
