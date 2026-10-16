@@ -431,3 +431,14 @@ body::before {
 .status-dev { border-color: var(--link); color: var(--link); }
 .status-design { border-color: #b08a2f; color: #ffcf6b; }
 .card .status { margin-bottom: .7rem; }
+
+/* Products dropdown: CSS only (the site loads no scripts). Opens on hover and on keyboard focus; on a phone the Products link goes to the full list. */
+nav li.has-sub { position: relative; }
+nav li.has-sub > a::after { content: ""; display: inline-block; margin-left: .4rem; border: 4px solid transparent; border-top-color: currentColor; border-bottom: 0; vertical-align: middle; }
+nav .sub { display: none; position: absolute; left: -.6rem; top: 100%; min-width: 19rem; flex-direction: column; gap: .1rem; margin: 0; padding: .45rem; background: var(--bg-raised); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 16px 40px -14px rgba(0,0,0,.8); z-index: 30; }
+nav li.has-sub:hover > .sub, nav li.has-sub:focus-within > .sub { display: flex; }
+nav .sub a { display: block; padding: .55rem .75rem; border: 0; border-radius: 8px; line-height: 1.25; }
+nav .sub a:hover, nav .sub a:focus-visible { background: rgba(30,111,224,.22); color: var(--text-strong); }
+nav .sub strong { display: block; font-weight: 600; color: var(--text-strong); }
+nav .sub small { display: block; margin-top: .15rem; color: var(--muted); font-size: .8rem; }
+@media (max-width: 640px) { nav .sub { display: none !important; } nav li.has-sub > a::after { display: none; } }
