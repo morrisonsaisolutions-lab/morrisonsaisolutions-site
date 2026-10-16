@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Memory MCP benchmark: LongMemEval results and limits</title>
-<meta name="description" content="Our published Memory MCP results on the public LongMemEval benchmark: 98.0% top-5 recall, run by us, not yet independently reproduced, with limits stated.">
+<title>Vaultic benchmark: LongMemEval results and limits</title>
+<meta name="description" content="Our published Vaultic results on the public LongMemEval benchmark: 98.0% top-5 recall, run by us, not yet independently reproduced, with limits stated.">
 <meta name="theme-color" content="#000c1d">
 <link rel="canonical" href="https://morrisonsaisolutions.ie/benchmarks/">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -13,20 +13,20 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Morrisons AI Solutions">
-<meta property="og:title" content="Memory MCP benchmark: LongMemEval results and limits">
-<meta property="og:description" content="Our published Memory MCP results on the public LongMemEval benchmark: 98.0% top-5 recall, run by us, not yet independently reproduced, with limits stated.">
+<meta property="og:title" content="Vaultic benchmark: LongMemEval results and limits">
+<meta property="og:description" content="Our published Vaultic results on the public LongMemEval benchmark: 98.0% top-5 recall, run by us, not yet independently reproduced, with limits stated.">
 <meta property="og:url" content="https://morrisonsaisolutions.ie/benchmarks/">
 <meta property="og:image" content="https://morrisonsaisolutions.ie/assets/share-benchmarks.jpg">
 <meta property="og:locale" content="en_IE">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="We tested our own claims: Memory MCP on the public LongMemEval benchmark, with results and limits.">
+<meta property="og:image:alt" content="We tested our own claims: Vaultic on the public LongMemEval benchmark, with results and limits.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Memory MCP benchmark: LongMemEval results and limits">
-<meta name="twitter:description" content="Our published Memory MCP results on the public LongMemEval benchmark: 98.0% top-5 recall, run by us, not yet independently reproduced, with limits stated.">
+<meta name="twitter:title" content="Vaultic benchmark: LongMemEval results and limits">
+<meta name="twitter:description" content="Our published Vaultic results on the public LongMemEval benchmark: 98.0% top-5 recall, run by us, not yet independently reproduced, with limits stated.">
 <meta name="twitter:image" content="https://morrisonsaisolutions.ie/assets/share-benchmarks.jpg">
-<meta name="twitter:image:alt" content="We tested our own claims: Memory MCP on the public LongMemEval benchmark, with results and limits.">
+<meta name="twitter:image:alt" content="We tested our own claims: Vaultic on the public LongMemEval benchmark, with results and limits.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <script type="application/ld+json">
 {
@@ -48,7 +48,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/assets/style.css?v=11f7aad136">
+<link rel="stylesheet" href="/assets/style.css?v=24f049a30d">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -56,7 +56,7 @@
   <div class="wrap">
     <a class="brand" href="/"><img src="/assets/logo-68.webp" alt="" width="34" height="34"><span>Morrisons AI Solutions</span></a>
     <nav aria-label="Main"><ul><li><a href="/">Home</a></li><li><a href="/products/">Products</a></li><li><a href="/benchmarks/" aria-current="page">Benchmarks</a></li><li><a href="/about/">About</a></li><li><a href="/support/">Support</a></li></ul></nav>
-    <a class="btn btn-sm nav-cta" href="/products/memory-mcp/">Get Memory MCP</a>
+    <a class="btn btn-sm nav-cta" href="/products/vaultic/">Get Vaultic</a>
   </div>
 </header>
 <main id="main">
@@ -64,12 +64,12 @@
 <header class="wrap page-head">
   <p class="eyebrow">Findings</p>
   <h1>We tested our own claims.</h1>
-  <p class="lead">We ran Memory MCP against a public benchmark, exactly as we ship it, and we are publishing the numbers whether they flatter us or not.</p>
+  <p class="lead">We ran Vaultic against a public benchmark, exactly as we ship it, and we are publishing the numbers whether they flatter us or not.</p>
 </header>
 
 <section class="wrap" aria-labelledby="what-h">
   <h2 id="what-h">What we ran</h2>
-  <p><a href="https://github.com/xiaowu0162/LongMemEval" rel="noopener">LongMemEval-S</a> is a public benchmark of 500 questions, each about a set of roughly 48 realistic chat sessions the answer is hidden inside. We stored every session in Memory MCP with its real <code>remember</code> tool, asked each question through its real <code>recall</code> tool, and checked whether the right session came back in the top 5 results. Nothing was mocked: the real embedding model, the real database, the shipped default of content encrypted at rest.</p>
+  <p><a href="https://github.com/xiaowu0162/LongMemEval" rel="noopener">LongMemEval-S</a> is a public benchmark of 500 questions, each about a set of roughly 48 realistic chat sessions the answer is hidden inside. We stored every session in Vaultic with its real <code>remember</code> tool, asked each question through its real <code>recall</code> tool, and checked whether the right session came back in the top 5 results. Nothing was mocked: the real embedding model, the real database, the shipped default of content encrypted at rest.</p>
   <p>The test ran in a disposable database created only for this benchmark. No customer or personal data was involved.</p>
 </section>
 
@@ -78,7 +78,7 @@
   <div class="glance">
     <div class="glance-stat"><strong>98%</strong><span>found the right memory in the top 5, one memory per message</span></div>
   </div>
-  <p>Stored the way the product is meant to be used &mdash; one distilled fact or message per memory, not a whole conversation dumped in one go &mdash; Memory MCP found the correct session in its top 5 results for <strong>98.0%</strong> of the 500 questions (98.1% once the 30 unanswerable &ldquo;trick&rdquo; questions are set aside). Stored as whole sessions instead, which asks far more of the embedding model in one go, it still found <strong>93.0%</strong>.</p>
+  <p>Stored the way the product is meant to be used &mdash; one distilled fact or message per memory, not a whole conversation dumped in one go &mdash; Vaultic found the correct session in its top 5 results for <strong>98.0%</strong> of the 500 questions (98.1% once the 30 unanswerable &ldquo;trick&rdquo; questions are set aside). Stored as whole sessions instead, which asks far more of the embedding model in one go, it still found <strong>93.0%</strong>.</p>
   <table class="plain-table">
     <thead><tr><th>Top results checked</th><th>One memory per message</th><th>One memory per whole session</th></tr></thead>
     <tbody>
@@ -104,7 +104,7 @@
 <section class="wrap" aria-labelledby="next-h">
   <h2 id="next-h">Why we're telling you this</h2>
   <p>A small company selling a memory tool should be able to show its memory actually works. We would rather publish a real 98% than an unproven claim of something higher, and we will publish the next result too, better or worse.</p>
-  <p><a class="btn" href="/products/memory-mcp/">Back to Memory MCP</a></p>
+  <p><a class="btn" href="/products/vaultic/">Back to Vaultic</a></p>
 </section>
 
 </main>

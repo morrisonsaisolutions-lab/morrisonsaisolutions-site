@@ -351,10 +351,13 @@ section[aria-labelledby="rooms-h"], section[aria-labelledby="graph-h"] {
   }
 }
 
-/* Site-wide network backdrop: fixed behind everything so it never tiles or seams; bright at the sides, dark in the middle where the text sits */
+/* Site-wide branded backdrop: restrained so the content stays readable while the site feels like Morrisons rather than a generic AI template. */
 body::before {
   content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  background: url(/assets/bg-network.webp) center / cover no-repeat; opacity: .6;
+  background:
+    linear-gradient(180deg, rgba(0, 12, 29, .78), rgba(0, 12, 29, .92)),
+    url(/assets/company-header-bg.png) center / cover no-repeat;
+  opacity: 1;
 }
 
 /* Support page: face looking at the visitor, beside the heading */
