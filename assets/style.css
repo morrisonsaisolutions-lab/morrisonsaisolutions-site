@@ -211,6 +211,8 @@ ul.plain li { margin: .45rem 0; }
 }
 .hero-tags { position: absolute; right: 0; bottom: .5rem; list-style: none; margin: 0; padding: 0; text-align: right; }
 .hero-tags li { text-transform: uppercase; letter-spacing: .28em; font-size: .62rem; color: var(--silver); line-height: 2; }
+.hero-face-caption { margin: .7rem 0 0; font-size: .85rem; line-height: 1.45; color: var(--muted); max-width: 22rem; }
+.hero-face-caption strong { color: var(--text-strong); }
 
 .band-tight { padding-block: 1.6rem; }
 .pillars { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); text-align: center; }
@@ -382,6 +384,22 @@ body::before {
 .about-figure { margin-block: 0 1.5rem; }
 .about-figure img { display: block; width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--border-soft); box-shadow: 0 0 60px -24px var(--accent-glow); }
 .about-figure figcaption { margin-top: .6rem; font-size: .85rem; color: var(--muted); text-align: center; }
+
+/* Meet Coda */
+.coda-meet {
+  display: grid; gap: 1.4rem; align-items: start;
+  grid-template-columns: minmax(7rem, 11rem) minmax(0, 1fr);
+  margin: 0 0 1.5rem;
+}
+.coda-meet img {
+  display: block; width: 100%; height: auto; border-radius: var(--radius);
+  border: 1px solid var(--border-soft); box-shadow: 0 0 40px -18px var(--accent-glow);
+}
+.coda-meet .lead { margin-top: 0; }
+@media (max-width: 700px) {
+  .coda-meet { grid-template-columns: 1fr; }
+  .coda-meet img { max-width: 11rem; }
+}
 
 /* Key promise callout (About page) */
 .promise {
