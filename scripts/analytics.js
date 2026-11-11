@@ -39,7 +39,7 @@ function start() {
   document.addEventListener('click', event => {
     const link = event.target.closest?.('a[href]');
     if (consent === 'accepted' && link && new URL(link.href).hostname === 'morrisonsaisolutions.lemonsqueezy.com') {
-      posthog.capture('checkout_clicked', {product: 'vaultic', page_path: location.pathname}, {transport: 'sendBeacon'});
+      posthog.capture('checkout_clicked', {product: 'vaultic', page_path: location.pathname}, {transport: 'sendBeacon', send_instantly: true});
     }
   });
   // Keep the existing website counter behind the same visitor choice.

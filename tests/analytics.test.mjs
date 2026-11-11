@@ -44,3 +44,10 @@ test('event filter strips arbitrary values, full URLs and form data',()=>{
   assert.equal(config.before_send({event:'$autocapture',properties:{}}),null);
   assert.equal(config.disable_session_recording,true);assert.equal(config.autocapture,false);
 });
+
+test('checkout click sends a permitted event immediately before navigation',()=>{
+  const r=run();r.choose('accepted');
+  r.handlers.click({target:{closest:()=>({href:'https://morrisonsaisolutions.lemonsqueezy.com/checkout/buy/example'})}});
+  const capture=r.calls.find(c=>c[0]==='capture'&&c[1]==='checkout_clicked');
+  assert.ok(capture);assert.equal(capture[3].send_instantly,true);assert.equal(capture[3].transport,'sendBeacon');
+});
