@@ -48,9 +48,10 @@
   ]
 }
 </script>
-<!-- Metricool analytics -->
-<script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"fab140e3e8930aafc17006fe8b1c7925"})});</script>
+
 <link rel="stylesheet" href="/assets/style.css?v=98ba6812da">
+<link rel="stylesheet" href="/assets/analytics-v1.css">
+<script defer src="/assets/analytics-v1.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -67,6 +68,10 @@
 <p>This policy covers two separate things that are easy to conflate: what the
 Vaultic <strong>software</strong> does with your data once installed, and what happens
 to your data during the <strong>purchase</strong> itself.</p>
+<h2>Optional website analytics</h2>
+<p>Updated 11 November 2026. With your permission, this website uses PostHog (EU hosting) to count page visits and clicks leading to our Lemon Squeezy checkout, and Metricool for website visit statistics. We do not load either analytics service until you choose “Allow analytics”. You can reject analytics or withdraw permission using “Analytics preferences” in the footer. Your choice is remembered on this browser for up to 180 days.</p>
+<p>PostHog uses a random browser identifier stored in local storage after permission. We send the page path and basic browser/device information. We strip query strings and URL fragments from PostHog events. We do not enable session recordings, automatic form capture or named user profiles. Network requests necessarily reach the analytics providers; PostHog IP anonymization is enabled for our project. Browser privacy signals (Do Not Track or Global Privacy Control) prevent analytics loading even if permission was previously given.</p>
+<p>This website analytics is separate from Vaultic: no local Vaultic memories, conversations or files are collected through this website setup. Checkout clicks are not evidence of completed purchases. For provider information see <a href="https://posthog.com/privacy">PostHog privacy</a> and <a href="https://metricool.com/privacy-policy/">Metricool privacy</a>. Contact us using the details below to ask about website analytics data.</p>
 <h2>The software, once installed</h2>
 <p>Vaultic is local-first by design. Everything it stores — memories,
 transcripts, the knowledge graph, the relationship ledger — lives in one
@@ -117,6 +122,7 @@ made, not your payment details.</p>
     <div>&copy; 2026 Morrisons AI Solutions. <a href="mailto:morrisonsaisolutions@gmail.com">morrisonsaisolutions@gmail.com</a><br><span class="foot-tag">Intelligence today &middot; A brighter tomorrow</span></div>
     <ul aria-label="Legal"><li><a href="/legal/eula/">End user licence</a></li><li><a href="/legal/privacy/">Privacy policy</a></li><li><a href="/legal/refund/">Refund policy</a></li><li><a href="/legal/notice/">Legal notice</a></li></ul>
   </div>
+<div class="wrap"><button type="button" data-analytics-settings>Analytics preferences</button></div>
 </footer>
 </body>
 </html>

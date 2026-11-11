@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "posthog-js": "^1.447.12"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  },
+  "private": true,
+  "scripts": {
+    "build:analytics": "node scripts/build-analytics.mjs",
+    "test": "node --test tests/analytics.test.mjs"
+  }
+}

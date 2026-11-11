@@ -1,0 +1,7 @@
+.analytics-choice{position:fixed;bottom:1rem;left:1rem;right:1rem;z-index:1000;max-width:48rem;margin:auto;padding:1rem;background:#10263c;color:#fff;border:1px solid #8da9c4;border-radius:.5rem;box-shadow:0 3px 20px #0008}
+.analytics-choice[hidden]{display:none}
+.analytics-choice p{margin:0 0 .75rem}
+.analytics-choice a{color:#b9e5ff;text-decoration:underline}
+.analytics-choice div{display:flex;gap:.75rem;flex-wrap:wrap}
+.analytics-choice button,[data-analytics-settings]{font:inherit;cursor:pointer;padding:.5rem .8rem;background:#132e47;color:#fff;border:1px solid #b9e5ff;border-radius:.25rem}
+.analytics-choice button:focus-visible,[data-analytics-settings]:focus-visible{outline:3px solid #fff;outline-offset:3px}
