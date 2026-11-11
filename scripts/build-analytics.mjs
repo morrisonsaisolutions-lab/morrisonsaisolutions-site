@@ -9,6 +9,6 @@ if (!env.PUBLIC_POSTHOG_TOKEN?.startsWith('phc_') || !/^https:\/\//.test(env.PUB
 }
 await build({
   entryPoints: ['scripts/analytics.js'], bundle: true, minify: true,
-  outfile: 'assets/analytics-v1.js', format: 'iife', target: ['es2020'],
+  outfile: 'assets/analytics-v2.js', format: 'iife', target: ['es2020'],
   define: { POSTHOG_TOKEN: JSON.stringify(env.PUBLIC_POSTHOG_TOKEN), POSTHOG_HOST: JSON.stringify(env.PUBLIC_POSTHOG_HOST) }
 });
