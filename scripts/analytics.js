@@ -1,5 +1,6 @@
 import posthog from 'posthog-js/dist/module.no-external';
 
+const privacyRequested = navigator.globalPrivacyControl === true || navigator.doNotTrack === '1';
 const preferenceKey = 'mas-analytics-consent-v1';
 let started = false;
 let consent = null;
@@ -9,7 +10,7 @@ try {
 } catch { /* Unavailable storage leaves analytics off. */ }
 
 function start() {
-  if (started || consent !== 'accepted' || navigator.globalPrivacyControl === true || navigator.doNotTrack === '1') return;
+  if (started || consent !== 'accepted' || privacyRequested) return;
   started = true;
   posthog.init(POSTHOG_TOKEN, {
     api_host: POSTHOG_HOST,
@@ -51,14 +52,19 @@ function start() {
 const panel = document.createElement('section');
 panel.className = 'analytics-choice';
 panel.setAttribute('aria-label', 'Website analytics preferences');
-panel.innerHTML = '<p>Allow optional website analytics? We use PostHog and Metricool to understand visits and checkout clicks. No session recordings. <a href="/legal/privacy/">Privacy details</a>.</p><div><button type="button" data-choice="accepted">Allow analytics</button><button type="button" data-choice="rejected">Reject analytics</button></div>';
+panel.innerHTML = '<p>Allow optional website analytics? We use PostHog and Metricool to understand visits and checkout clicks. No session recordings. <a href="/legal/privacy/">Privacy details</a>.</p><p data-analytics-status></p><div><button type="button" data-choice="accepted">Allow analytics</button><button type="button" data-choice="rejected">Reject analytics</button></div>';
 panel.hidden = consent !== null;
 document.body.append(panel);
+function showStatus() {
+  panel.querySelector('[data-analytics-status]').textContent = privacyRequested ? 'Analytics is off because your browser requests privacy (Do Not Track or Global Privacy Control).' : consent === 'accepted' ? 'Your current choice: analytics allowed.' : consent === 'rejected' ? 'Your current choice: analytics rejected.' : 'Analytics stays off until you allow it.';
+}
+showStatus();
 panel.addEventListener('click', event => {
   const value = event.target.dataset.choice;
   if (!value) return;
   consent = value;
   try { localStorage.setItem(preferenceKey, JSON.stringify({value, time: Date.now()})); } catch { /* This page's choice still applies. */ }
+  showStatus();
   panel.hidden = true;
   if (value === 'accepted') start();
   else if (started) {
