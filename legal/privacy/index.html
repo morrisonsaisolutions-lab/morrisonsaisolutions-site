@@ -48,18 +48,17 @@
   ]
 }
 </script>
-
-<link rel="stylesheet" href="/assets/style.css?v=98ba6812da">
 <link rel="stylesheet" href="/assets/analytics-v1.css">
 <script defer src="/assets/analytics-v3.js"></script>
+<link rel="stylesheet" href="/assets/style.css?v=388b02f02b">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/"><img src="/assets/logo-68.webp" alt="" width="34" height="34"><span>Morrisons AI Solutions</span></a>
-    <nav aria-label="Main"><ul><li><a href="/">Home</a></li><li class="has-sub"><a href="/products/">Products</a><ul class="sub" aria-label="Our products"><li><a href="/products/vaultic/"><strong>Vaultic</strong><small>Memory for AI agents · Available now</small></a></li><li><a href="/products/repository-intelligence/"><strong>Repository Intelligence</strong><small>File scanner · Coming soon</small></a></li><li><a href="/products/build-intelligence/"><strong>Build Intelligence</strong><small>Build verifier · Design stage</small></a></li></ul></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/about/">About</a></li><li><a href="/support/">Support</a></li></ul></nav>
-    <a class="btn btn-sm nav-cta" href="/products/vaultic/">Get Vaultic</a>
+    <nav aria-label="Main"><ul><li><a href="/">Home</a></li><li class="has-sub"><a href="/products/">Products</a><ul class="sub" aria-label="Our products"><li><a href="/products/vaultic/"><strong>Vaultic</strong><small>Helps your AI remember · Available now</small></a></li><li><a href="/products/repository-intelligence/"><strong>Repository Intelligence</strong><small>Understand a software project · In development</small></a></li><li><a href="/products/build-intelligence/"><strong>Build Intelligence</strong><small>Check software changes · Design stage</small></a></li></ul></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/about/">About</a></li><li><a href="/support/">Support</a></li></ul></nav>
+    <a class="btn btn-sm nav-cta" href="/products/">Explore products</a>
   </div>
 </header>
 <main id="main">
@@ -72,22 +71,18 @@ to your data during the <strong>purchase</strong> itself.</p>
 <p>Updated 11 November 2026. With your permission, this website uses PostHog (EU hosting) to count page visits and clicks leading to our Lemon Squeezy checkout, and Metricool for website visit statistics. We do not load either analytics service until you choose “Allow analytics”. You can reject analytics or withdraw permission using “Analytics preferences” in the footer. Your choice is remembered on this browser for up to 180 days.</p>
 <p>PostHog uses a random browser identifier stored in local storage after permission. We send the page path and basic browser/device information. We strip query strings and URL fragments from PostHog events. We do not enable session recordings, automatic form capture or named user profiles. Network requests necessarily reach the analytics providers; PostHog IP anonymization is enabled for our project. Browser privacy signals (Do Not Track or Global Privacy Control) prevent analytics loading even if permission was previously given.</p>
 <p>This website analytics is separate from Vaultic: no local Vaultic memories, conversations or files are collected through this website setup. Checkout clicks are not evidence of completed purchases. For provider information see <a href="https://posthog.com/privacy">PostHog privacy</a> and <a href="https://metricool.com/privacy-policy/">Metricool privacy</a>. Contact us using the details below to ask about website analytics data.</p>
+
 <h2>The software, once installed</h2>
-<p>Vaultic is local-first by design. Everything it stores — memories,
-transcripts, the knowledge graph, the relationship ledger — lives in one
-SQLite file on your own device (<code>~/.memory_mcp/memory.db</code> by default). There
-is no cloud component, no telemetry, and no external network call in normal
-operation.</p>
-<p><strong>Your content is encrypted at rest by default</strong>, using AES-256-GCM, before
-it's ever written to that file — a copied database or backup holds
-ciphertext, not readable memories. This can be turned off
+<p>Vaultic is local-first by design. Memories, transcripts, graph records and working context are stored on your device. The main database is <code>~/.memory_mcp/memory.db</code> by default; experience capture, lifecycle and artifact features use additional local stores. Encryption keys live separately in <code>~/.memory_mcp_keys</code> by default. Back up all configured stores and their keys. There is no required Vaultic cloud service or telemetry.</p>
+<p>Your AI client may send retrieved context to its model provider according to its own settings. Local storage in Vaultic does not change your client’s data policy.</p>
+<p><strong>Supported content fields are encrypted at rest by default</strong>, using AES-256-GCM. This protects memory text in a copied database when the separate keys are not available. It does not encrypt every field: structured metadata, embeddings and keyed search fingerprints have their own privacy limits. This can be turned off
 (<code>MEMORY_MCP_CONTENT_ENCRYPTION_ENABLED=false</code>) if you have a reason to, but
 it's on unless you choose otherwise.</p>
 <p><strong>By default nothing is downloaded when you run it.</strong> The embedding model is
 included in the package, so the server runs fully offline once it is installed.
 If you choose a different embedding model, that model is downloaded from
 Hugging Face the first time it runs.</p>
-<p><strong>The one exception:</strong> if you explicitly configure
+<p><strong>External embeddings:</strong> if you explicitly configure
 <code>MEMORY_MCP_EMBEDDING_PROVIDER=api</code> to use an external embeddings API
 instead, memory <em>content</em> is sent to whatever API you configured — that is
 an explicit choice you make, not the default behavior.</p>
@@ -122,7 +117,7 @@ made, not your payment details.</p>
     <div>&copy; 2026 Morrisons AI Solutions. <a href="mailto:morrisonsaisolutions@gmail.com">morrisonsaisolutions@gmail.com</a><br><span class="foot-tag">Intelligence today &middot; A brighter tomorrow</span></div>
     <ul aria-label="Legal"><li><a href="/legal/eula/">End user licence</a></li><li><a href="/legal/privacy/">Privacy policy</a></li><li><a href="/legal/refund/">Refund policy</a></li><li><a href="/legal/notice/">Legal notice</a></li></ul>
   </div>
-<div class="wrap"><button type="button" data-analytics-settings>Analytics preferences</button></div>
+  <div class="wrap"><button type="button" data-analytics-settings>Analytics preferences</button></div>
 </footer>
 </body>
 </html>

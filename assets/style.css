@@ -442,3 +442,55 @@ nav .sub a:hover, nav .sub a:focus-visible { background: rgba(30,111,224,.22); c
 nav .sub strong { display: block; font-weight: 600; color: var(--text-strong); }
 nav .sub small { display: block; margin-top: .15rem; color: var(--muted); font-size: .8rem; }
 @media (max-width: 640px) { nav .sub { display: none !important; } nav li.has-sub > a::after { display: none; } }
+
+/* Sales pages: lead with the workflow and keep product choices close to the benefit. */
+.sales-hero { padding-block: 3.5rem; }
+.sales-hero .hero-grid { grid-template-columns: minmax(0, 1.4fr) minmax(0, .8fr); gap: 3rem; }
+.sales-hero .hero-mark { grid-column: auto; width: 100%; max-width: 25rem; margin: 0; }
+.sales-hero .hero-mark img { width: 100%; max-width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; object-position: center; -webkit-mask-image: none; mask-image: none; }
+.sales-hero .hero-text h1 { font-size: clamp(2.3rem, 4.5vw, 3.5rem); }
+.sales-hero .hero-text .lead { font-size: 1.15rem; max-width: 38rem; }
+.sales-hero .hero-text .btn-row { flex-wrap: wrap; }
+.sales-hero .hero-text .btn-row .btn { white-space: normal; }
+.purchase-note { margin: 1rem 0; color: var(--silver); font-size: .9rem; }
+.compatibility-note { color: var(--muted); font-size: .95rem; margin-top: 1rem; max-width: 44rem; }
+.compatibility-note strong { color: var(--silver); }
+.product-intro { max-width: var(--max); }
+.product-intro h1 { font-size: clamp(2.2rem, 4.8vw, 3.5rem); }
+.product-intro .buybox { margin-top: 1.4rem; }
+.home-workflow { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
+.workflow-steps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.2rem; }
+.workflow-steps li { padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--bg-raised); }
+.workflow-steps p { margin-bottom: 0; }
+.step-number { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border: 1px solid var(--link); border-radius: 50%; color: var(--link); margin-bottom: 1rem; }
+.purchase-band { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem 3rem; }
+.purchase-band > div:first-child { flex: 1 1 22rem; }
+.purchase-band > div:last-child { flex: 0 1 auto; }
+.purchase-band p { color: var(--silver); }
+.setup-details { border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.3rem; margin: 1.5rem 0; }
+.setup-details summary { cursor: pointer; color: var(--link); font-weight: 600; }
+.setup-details[open] summary { margin-bottom: 1rem; }
+.directory-badge { display: flex; justify-content: center; padding-block: 1.5rem; }
+.two-col { grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.site-footer [data-analytics-settings] { margin-top: 1rem; }
+@media (max-width: 900px) {
+  .sales-hero .hero-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .sales-hero .hero-mark { display: none; }
+  .sales-hero { padding-block: 2rem; }
+  .home-workflow { grid-template-columns: 1fr; gap: 1.5rem; }
+  .workflow-steps { grid-template-columns: 1fr; }
+}
+
+/* Keep artwork behind the message and leave room for the product on small screens. */
+body::before {
+  background: linear-gradient(180deg, rgba(0, 12, 29, .94), rgba(0, 12, 29, .97)), url(/assets/company-header-bg.png) center / cover no-repeat;
+}
+@media (max-width: 640px) {
+  .site-header .wrap { gap: .65rem; padding-block: .65rem; }
+  .site-header .brand span { font-size: .65rem; letter-spacing: .12em; }
+  .site-header nav ul { gap: .6rem; }
+  .site-header nav a { font-size: .8rem; }
+  .site-header .nav-cta { display: none; }
+}
+@media (max-width: 640px) { .product-intro .lead { font-size: 1.1rem; } }
+@media (max-width: 359px) { .site-header nav a { font-size: .72rem; } .site-header nav ul { gap: .45rem; } }

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vaultic: local, encrypted memory server for AI agents</title>
-<meta name="description" content="Give any MCP-compatible AI agent a memory that survives between sessions. Local-first, encrypted at rest, no cloud, works offline. 100 tools, €135 one-off.">
+<title>Vaultic: help your AI remember earlier work</title>
+<meta name="description" content="Help your AI assistant remember earlier work. Save information on your computer, look through saved records and get help with setup. Linux, €135 one-off.">
 <meta name="theme-color" content="#000c1d">
 <link rel="canonical" href="https://morrisonsaisolutions.ie/products/vaultic/">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -13,8 +13,8 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Morrisons AI Solutions">
-<meta property="og:title" content="Vaultic: local, encrypted memory server for AI agents">
-<meta property="og:description" content="Give any MCP-compatible AI agent a memory that survives between sessions. Local-first, encrypted at rest, no cloud, works offline. 100 tools, €135 one-off.">
+<meta property="og:title" content="Vaultic: help your AI remember earlier work">
+<meta property="og:description" content="Help your AI assistant remember earlier work. Save information on your computer, look through saved records and get help with setup. Linux, €135 one-off.">
 <meta property="og:url" content="https://morrisonsaisolutions.ie/products/vaultic/">
 <meta property="og:image" content="https://morrisonsaisolutions.ie/assets/share-vaultic.jpg">
 <meta property="og:locale" content="en_IE">
@@ -23,8 +23,8 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Vaultic, a local, encrypted memory server for AI agents, beside a glowing brain and a chrome M.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Vaultic: local, encrypted memory server for AI agents">
-<meta name="twitter:description" content="Give any MCP-compatible AI agent a memory that survives between sessions. Local-first, encrypted at rest, no cloud, works offline. 100 tools, €135 one-off.">
+<meta name="twitter:title" content="Vaultic: help your AI remember earlier work">
+<meta name="twitter:description" content="Help your AI assistant remember earlier work. Save information on your computer, look through saved records and get help with setup. Linux, €135 one-off.">
 <meta name="twitter:image" content="https://morrisonsaisolutions.ie/assets/share-vaultic.jpg">
 <meta name="twitter:image:alt" content="Vaultic, a local, encrypted memory server for AI agents, beside a glowing brain and a chrome M.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
@@ -33,20 +33,22 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Vaultic",
-  "description": "Give any MCP-compatible AI agent a memory that survives between sessions. Local-first, encrypted at rest, no cloud, works offline. 100 tools, €135 one-off.",
+  "description": "Help your AI assistant remember earlier work. Save information on your computer, look through saved records and get help with setup. Linux, €135 one-off.",
   "url": "https://morrisonsaisolutions.ie/products/vaultic/",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Linux",
-  "softwareVersion": "0.1.4",
+  "softwareVersion": "0.1.5",
   "image": "https://morrisonsaisolutions.ie/assets/share-vaultic.jpg",
-  "softwareRequirements": "Linux; Python 3.12 or newer",
+  "softwareRequirements": "Linux; Python 3.12+ with SQLite 3.51.3+; internet for dependency installation; MCP-compatible client",
   "featureList": [
     "Encrypted at rest (AES-256-GCM)",
     "Local-first: no cloud, no account, no telemetry",
     "Works offline: the embedding model is included",
     "Hybrid keyword and semantic retrieval",
     "Knowledge graph of entities and relations",
-    "100 MCP tools"
+    "111 MCP tools, with a compact default tool list",
+    "Desktop memory viewer and open_gui tool",
+    "Agent Manual and reference hooks for agent-assisted setup"
   ],
   "publisher": {
     "@id": "https://morrisonsaisolutions.ie/#organization"
@@ -86,190 +88,125 @@
   ]
 }
 </script>
-
-<link rel="stylesheet" href="/assets/style.css?v=98ba6812da">
 <link rel="stylesheet" href="/assets/analytics-v1.css">
 <script defer src="/assets/analytics-v3.js"></script>
+<link rel="stylesheet" href="/assets/style.css?v=388b02f02b">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="/"><img src="/assets/logo-68.webp" alt="" width="34" height="34"><span>Morrisons AI Solutions</span></a>
-    <nav aria-label="Main"><ul><li><a href="/">Home</a></li><li class="has-sub"><a href="/products/" aria-current="page">Products</a><ul class="sub" aria-label="Our products"><li><a href="/products/vaultic/"><strong>Vaultic</strong><small>Memory for AI agents · Available now</small></a></li><li><a href="/products/repository-intelligence/"><strong>Repository Intelligence</strong><small>File scanner · Coming soon</small></a></li><li><a href="/products/build-intelligence/"><strong>Build Intelligence</strong><small>Build verifier · Design stage</small></a></li></ul></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/about/">About</a></li><li><a href="/support/">Support</a></li></ul></nav>
-    <a class="btn btn-sm nav-cta" href="/products/vaultic/">Get Vaultic</a>
+    <nav aria-label="Main"><ul><li><a href="/">Home</a></li><li class="has-sub"><a href="/products/" aria-current="page">Products</a><ul class="sub" aria-label="Our products"><li><a href="/products/vaultic/"><strong>Vaultic</strong><small>Helps your AI remember · Available now</small></a></li><li><a href="/products/repository-intelligence/"><strong>Repository Intelligence</strong><small>Understand a software project · In development</small></a></li><li><a href="/products/build-intelligence/"><strong>Build Intelligence</strong><small>Check software changes · Design stage</small></a></li></ul></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/about/">About</a></li><li><a href="/support/">Support</a></li></ul></nav>
+    <a class="btn btn-sm nav-cta" href="/products/">Explore products</a>
   </div>
 </header>
 <main id="main">
-<div class="wrap page-banner"><div class="hero-art"><img src="/assets/banner-slim.webp" width="1600" height="300" alt="Morrisons AI Solutions: intelligence today, a brighter tomorrow" fetchpriority="high" decoding="async"></div></div>
-<header class="wrap page-head">
-  <p class="eyebrow">Product</p>
-  <h1>Vaultic</h1>
-  <p class="lead">A persistent memory server for any MCP-compatible AI agent. Transcripts, searchable memories, a knowledge graph and a relationship ledger, all in one local file. No cloud.</p>
-  <p class="platform-note"><strong>Linux only.</strong> Windows is coming soon. macOS is not tested. Please check this before you buy.</p>
+<header class="wrap page-head product-intro">
+  <p class="eyebrow">Vaultic 0.1.5 · Available now</p>
+  <h1>Help your AI remember.<br><span class="accent">Pick up where you left off.</span></h1>
+  <p class="lead">Vaultic saves useful information on your computer so your AI assistant can look it up in later chats. Keep project details, decisions and next steps to hand, and open the app to see what has been saved.</p>
   <div class="buybox">
-    <div>
-      <span class="price">€135<small>one-off</small></span>
-      <ul>
-        <li>No subscription, pay once</li>
-        <li>All 0.x updates included</li>
-        <li>14-day refund, see the <a href="/legal/refund/">refund policy</a></li>
-      </ul>
-    </div>
-    <div><a class="btn" href="https://morrisonsaisolutions.lemonsqueezy.com/checkout/buy/6b51fced-3ffa-4a02-8e04-1caddf4cd045">Buy now, €135</a><p class="updated">The price includes any applicable tax. Checkout is run by Lemon Squeezy, the merchant of record; we never see your payment details.</p></div>
+    <div><span class="price">€135<small>one-off</small></span><ul><li>No Vaultic subscription</li><li>All 0.x updates included</li><li><a href="/legal/refund/">14-day refund policy</a></li></ul></div>
+    <div><a class="btn" href="https://morrisonsaisolutions.lemonsqueezy.com/checkout/buy/6b51fced-3ffa-4a02-8e04-1caddf4cd045">Buy now, €135</a><p class="updated">Includes applicable tax. Secure checkout through Lemon Squeezy.</p></div>
   </div>
+  <p class="compatibility-note"><strong>Linux only.</strong> You need an AI app that supports MCP (a way to connect extra tools), and you need to set it up. Installation needs internet access. Windows is planned; macOS is untested.</p>
 </header>
 
-
-<section class="wrap band-tight" aria-labelledby="tools-h">
-  <h2 id="tools-h" class="tools-h">A few of the 100</h2>
-  <ul class="tool-cards">
-    <li><code>session_boot</code><span>Start a session and get the agent&rsquo;s profile and recent context back.</span></li>
-    <li><code>log_turn</code><span>Save every conversation turn word for word, append-only.</span></li>
-    <li><code>remember</code><span>Store a distilled memory, with near-duplicates merged.</span></li>
-    <li><code>recall</code><span>Find memories by meaning, with filters.</span></li>
-    <li><code>retrieve_context</code><span>Pull the right context from memories, the graph and the session in one call.</span></li>
-    <li><code>correct_ledger_entry</code><span>Correct a belief without erasing it. The old claim is kept, marked refuted.</span></li>
-    <li><code>record_commitment</code><span>Track a promise until it is kept or broken.</span></li>
-    <li><code>get_continuity_capsule</code><span>A snapshot of active state, so a fresh session can pick up where the last one stopped.</span></li>
-  </ul>
-  <p class="tools-more">&hellip;and 92 more, covering the knowledge graph, the relationship ledger, consent, retention, export and the audit log.</p>
-</section>
-
-<section class="wrap" aria-labelledby="rooms-h">
-  <div class="split">
-    <div>
-      <h2 id="rooms-h">Different room.<br><span class="accent">Same history.</span></h2>
-      <p class="section-intro">Switch clients, models or tools and the agent&rsquo;s memory stays with them. It lives in one local file that any MCP client can reach.</p>
-      <a class="btn btn-ghost btn-sm" href="#how-it-works">See how it works</a>
-    </div>
-    <div class="rooms">
-      <ul class="rooms-row"><li><strong>Any client</strong><span>Different room.</span></li><li><strong>Any model</strong><span>Different room.</span></li><li><strong>Any session</strong><span>Different room.</span></li></ul>
-      <svg class="rooms-lines" viewBox="0 0 300 60" preserveAspectRatio="none" aria-hidden="true"><path d="M50 0C50 30 150 20 150 60M150 0V60M250 0C250 30 150 20 150 60"/></svg>
-      <div class="rooms-core"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg><div><strong>Vaultic</strong><small>Same history. Real continuity.</small></div></div>
-    </div>
-    <ul class="benefits"><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg><span>One memory. Many clients.</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg><span>Conversations become structured knowledge.</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><span>Identity, preferences, context and history persist.</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg><span>You stay you. It all stays on your device.</span></li></ul>
-  </div>
-</section>
-
-<section class="wrap" aria-labelledby="graph-h">
-  <div class="split split-graph">
-    <div>
-      <h2 id="graph-h">Not just storage.<br><span class="accent">Structured memory.</span></h2>
-      <p class="section-intro">Conversations, corrections and commitments become a connected knowledge graph your agent can search.</p>
-      <a class="btn btn-ghost btn-sm" href="#what-h">See what you get</a>
-    </div>
-    <svg class="graph" viewBox="-40 0 500 300" role="img" aria-label="A memory graph linking conversations, memories, relationships, preferences, corrections and commitments">
-      <g class="graph-lines"><path d="M210 150L210 42M210 150L330 90M210 150L330 210M210 150L210 262M210 150L90 210M210 150L90 90"/></g>
-      <circle class="graph-core" cx="210" cy="150" r="46"/>
-      <text class="graph-core-t" x="210" y="146" text-anchor="middle">Memory</text><text class="graph-core-t" x="210" y="164" text-anchor="middle">Graph</text>
-      <g class="graph-nodes"><circle cx="210" cy="42" r="6"/><circle cx="330" cy="90" r="6"/><circle cx="330" cy="210" r="6"/><circle cx="210" cy="262" r="6"/><circle cx="90" cy="210" r="6"/><circle cx="90" cy="90" r="6"/></g>
-      <g class="graph-labels"><text x="210" y="28" text-anchor="middle">Conversations</text><text x="342" y="80">Memories</text><text x="342" y="226">Relationships</text><text x="210" y="284" text-anchor="middle">Corrections</text><text x="78" y="226" text-anchor="end">Preferences</text><text x="78" y="80" text-anchor="end">Commitments</text></g>
-    </svg>
-    <ul class="checks"><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Several memory types</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Knowledge graph of entities and relations</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Relationship ledger</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Corrections refute, never overwrite</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Evidence and provenance</span></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>Hybrid keyword and semantic retrieval</span></li></ul>
-  </div>
-</section>
-
-<section class="wrap" id="how-it-works" aria-labelledby="how-h">
-  <div class="split split-pipe">
-    <div>
-      <h2 id="how-h">Built for evidence,<br><span class="accent">not guesswork.</span></h2>
-      <p class="section-intro">A plain pipeline from raw conversation to trusted context.</p>
-    </div>
-    <ol class="pipeline"><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg><h3>Capture</h3><p>Every turn saved verbatim, append-only.</p></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><h3>Provenance</h3><p>Each belief links back to its evidence.</p></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg><h3>Consolidation</h3><p>Near-duplicates merge. Corrections refute the old claim.</p></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><h3>Retrieval</h3><p>Hybrid keyword and semantic search.</p></li><li><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg><h3>Runtime context</h3><p>The right memory, handed over when asked.</p></li></ol>
-  </div>
-  <p class="pipe-note">Original evidence stays intact. Interpretations can evolve.</p>
-</section>
-<section class="wrap" aria-labelledby="what-h">
-  <h2 id="what-h">What you get</h2>
+<section class="wrap" aria-labelledby="benefit-h">
+  <h2 id="benefit-h">What does that mean in practice?</h2>
+  <p>Suppose you and your AI assistant plan a website today. You save the pages you agreed on and the next job. In a later chat, you can ask, “Where did we leave off with the website?” The assistant can look up the saved information and help you carry on.</p>
+  <p>You choose what to save. Automatic conversation saving needs a working connection to your AI app; the included instructions help you set this up.</p>
   <div class="grid">
-    <div class="card"><h3>Local-first</h3><p>Everything lives in a single SQLite file on your own device. No cloud component, no telemetry and no account.</p></div>
-    <div class="card"><h3>Encrypted at rest</h3><p>Memories, transcripts, reflections and observations are sealed with AES-256-GCM before they touch disk, so a copied database or backup holds ciphertext.</p></div>
-    <div class="card"><h3>Personas</h3><p>Give each agent its own persona and memory. Scope memories by user when a persona is shared, and let an agent keep a working or personal relationship with its user.</p></div>
-    <div class="card"><h3>Nothing silently overwritten</h3><p>Corrections refute the old claim and add a new one. Forgetting archives a memory instead of erasing it. Commitments and repairs are tracked the same way.</p></div>
-    <div class="card"><h3>You stay in control</h3><p>Per-user consent categories, an audit log of every read and write, and diagnostics that are off unless you turn them on.</p></div>
-    <div class="card"><h3>Works with your client</h3><p>Standard MCP over stdio, with HTTP available, and 100 tools. Your agent is shown a short list of the 31 it needs every day and reaches the rest through a built-in menu, so they do not use up its working space. Point any MCP-compatible agent at it.</p></div>
+    <div class="card"><h3>Pick up an earlier project</h3><p>Ask about earlier work, decisions and preferences in a new chat. Look up where you left off and what comes next.</p></div>
+    <div class="card"><h3>Open your memory</h3><p>Use the desktop app to read saved notes and conversations, view your assistant’s settings and see links between people, projects and ideas. Your AI assistant can open the app for you.</p></div>
+    <div class="card"><h3>Get help with setup</h3><p>Give the included Agent Manual to your AI assistant. It can help connect Vaultic and set up how information is saved and looked up. Your AI app may ask you to approve some steps.</p></div>
   </div>
 </section>
 
-<section class="wrap" aria-labelledby="stores-h">
-  <h2 id="stores-h">What it stores</h2>
-  <p class="section-intro">Four kinds of data, each with its own purpose.</p>
-  <div class="table-scroll">
-    <table>
-      <thead><tr><th scope="col">Kind</th><th scope="col">What it is</th></tr></thead>
-      <tbody>
-        <tr><th scope="row">Transcripts</th><td>The raw, verbatim conversation record. Append-only.</td></tr>
-        <tr><th scope="row">Memories</th><td>Distilled facts, preferences, summaries and events, found again with hybrid search and de-duplicated automatically.</td></tr>
-        <tr><th scope="row">Knowledge graph</th><td>Named entities, typed relations and free-text observations.</td></tr>
-        <tr><th scope="row">Relationship ledger</th><td>What the agent believes about the user, itself and the relationship, each claim linked to its evidence.</td></tr>
-      </tbody>
-    </table>
+<section class="wrap" id="workflow" aria-labelledby="workflow-h">
+  <p class="eyebrow">A workflow you can try</p>
+  <h2 id="workflow-h">“What were we working on earlier?”</h2>
+  <p class="section-intro">Once Vaultic is connected, ask in your own words. Your AI assistant uses the saved information to help answer.</p>
+  <ol class="workflow-steps">
+    <li><span class="step-number">1</span><h3>Save the useful context</h3><p>Work on a project and save its details, decisions and next step. You can also set up automatic saving of conversations.</p></li>
+    <li><span class="step-number">2</span><h3>Start a fresh session</h3><p>Open a new chat with the same memory connection and assistant settings. Ask about the earlier project.</p></li>
+    <li><span class="step-number">3</span><h3>Check it and continue</h3><p>Read the earlier details and continue working. Open the app to check saved records and correct anything that needs updating.</p></li>
+  </ol>
+  <p class="updated">Example workflow. Recall depends on what was saved, the query and your client setup; it is selective and can miss information.</p>
+</section>
+
+<section class="wrap" aria-labelledby="included-h">
+  <h2 id="included-h">Your memory. On your machine.</h2>
+  <div class="grid">
+    <div class="card"><h3>Local storage</h3><p>Memories and supporting records stay in local databases and stores. No required Vaultic cloud account, telemetry or licence server.</p></div>
+    <div class="card"><h3>Encrypted content</h3><p>Supported content fields are encrypted at rest with AES-256-GCM by default. Keys are kept separately. Metadata and search-index privacy limits are explained below.</p></div>
+    <div class="card"><h3>Search in your own words</h3><p>Semantic retrieval works alongside encrypted keyword search. Word-form matching and prefixes help find relevant saved text.</p></div>
+    <div class="card"><h3>More than a chat log</h3><p>Keep distilled memories, source transcripts, a knowledge graph, profiles and an evidence-linked relationship ledger.</p></div>
+    <div class="card"><h3>Corrections with history</h3><p>Supersede an outdated memory or refute a ledger claim while keeping its history. Forgetting archives a memory rather than silently erasing it.</p></div>
+    <div class="card"><h3>Choose your workflow</h3><p>Use MCP over stdio or configured loopback HTTP. Included reference hooks cover Claude Code; other hosts need their own supported configuration.</p></div>
   </div>
 </section>
 
-<section class="wrap" id="security" aria-labelledby="sec-h">
-  <h2 id="sec-h">Security and privacy</h2>
-  <div class="two-col">
-    <div>
-      <ul class="plain">
-        <li>Content is encrypted at rest by default with AES-256-GCM.</li>
-        <li>The key store sits in its own directory with restrictive file permissions. There is deliberately no passphrase, so the server can open its own memory on every start.</li>
-        <li>No telemetry, and no licence server. The software never phones home to check your licence or look for updates.</li>
-      </ul>
-    </div>
-    <div>
-      <ul class="plain">
-        <li>The embedding model is included in the package, so it works fully offline from the first run.</li>
-        <li>Diagnostics are opt-in, and contain only aggregate counts and version strings, never your content.</li>
-        <li>Using an external embeddings API is an explicit choice you make. It is not the default.</li>
-      </ul>
-    </div>
-  </div>
-  <p>The full detail is in the <a href="/legal/privacy/">privacy policy</a>.</p>
-</section>
-
-<section class="wrap" aria-labelledby="need-h">
-  <h2 id="need-h">What you need</h2>
-  <ul class="plain">
-    <li>Python 3.12 or newer, whose SQLite is <strong>3.51.3 or newer</strong>. The Python that ships with Ubuntu 24.04 (3.12) is too old. The install steps use <code>uv</code> with Python 3.13, which brings a current SQLite. The server refuses to start on an older one, because older SQLite has a bug that can corrupt the database.</li>
-    <li>An internet connection while installing, to download the dependencies. The embedding model is included, so after installing it runs fully offline.</li>
-    <li>Developed and tested on Linux. <strong>Windows support is coming soon.</strong> macOS has not been tested.</li>
-  </ul>
-  <div class="note"><strong>To be clear:</strong> this is not a self-contained offline installer. It needs the internet once, at setup, and then it does not.</div>
-</section>
-
-<section class="wrap" id="limits" aria-labelledby="lim-h">
-  <h2 id="lim-h">Honest limitations</h2>
-  <p class="section-intro">We would rather you know these before you buy.</p>
-  <ul class="plain">
-    <li><strong>Back up your encryption keys.</strong> The key folder lives apart from the database, and an encrypted backup cannot be read without it. Your data and keys never leave your machine, so we cannot recover them for you.</li>
-    <li><strong>Keyword search over encrypted content matches whole words only.</strong> There is no stemming, prefix or phrase search. Recall combines it with semantic (meaning-based) search, and the database holds only keyed fingerprints of the words, never the words themselves.</li>
-    <li><strong>The relationship safety check is a pattern list, not a semantic classifier.</strong> A sufficiently different phrasing can slip past it. It is a safeguard, not a guarantee.</li>
-    <li><strong>De-duplication, decay and contradiction flagging are heuristics.</strong> They are not verified understanding.</li>
-    <li><strong>It is built for one local user.</strong> It is not a multi-tenant system, and user scoping is bookkeeping, not authorisation.</li>
-    <li><strong>File-permission hardening is tested on Linux only.</strong></li>
-  </ul>
-  <p><a href="/benchmarks/">We tested our own recall claims against a public benchmark &mdash; see the results.</a></p>
-</section>
-
-<section class="wrap" aria-labelledby="install-h">
-  <h2 id="install-h">Getting started</h2>
-  <p>After purchase you download the package from your order, and you can re-download it at any time. Install it with pip using the step-by-step instructions included, then register it <strong>once, globally</strong>: add the full path of the <code>vaultic-mcp</code> command inside the environment you installed it into to your client's user-level (global) MCP settings, not to a single project or session. If it is only added to one session, your other sessions start without it and cannot reach your memory. Registered globally, every session in every folder shares the same memory:</p>
+<section class="wrap" aria-labelledby="setup-h">
+  <h2 id="setup-h">Download. Connect. Make it yours.</h2>
+  <ol class="plain">
+    <li><strong>Download Vaultic 0.1.5</strong> from your Lemon Squeezy order. The package includes the embedding model, Agent Manual and reference hooks.</li>
+    <li><strong>Install using the included instructions.</strong> Use Python 3.12+ with SQLite 3.51.3+. The supplied Linux instructions use <code>uv</code> and Python 3.13; check the actual SQLite version before starting.</li>
+    <li><strong>Give the manual to your agent.</strong> Let it help connect Vaultic and configure capture and recall for your host. Apply any required host approvals.</li>
+    <li><strong>Try a fresh-session recall.</strong> Save a harmless test fact, open a new session and ask for it. Verify the result before relying on the workflow.</li>
+  </ol>
+  <details class="setup-details"><summary>MCP configuration example</summary>
+    <p>Use the real absolute path to the executable inside your installed environment. Register it at user/global scope if you want it available across projects. Client configuration formats vary; this example is for clients using <code>mcpServers</code>.</p>
 <pre><code>{
   "mcpServers": {
     "vaultic": {
-      "command": "vaultic-mcp"
+      "command": "/home/YOUR-NAME/vaultic-env/bin/vaultic-mcp"
     }
   }
 }</code></pre>
-  <p>Your download also includes an <strong>Agent Manual</strong>, written to your AI agent. It covers installing and connecting, the rules for every turn, all 100 tools, triggers, hooks and skills, and comes with a rulebook skill and reference hooks for Claude Code.</p>
-  <p>Updates arrive by re-downloading from your order. The software never checks for them itself.</p>
-  <p>Questions first? <a href="/support/">Get in touch</a>.</p>
+    <p>Registration makes the tools available. Automatic capture and recall also require a working host integration.</p>
+  </details>
+  <p>Once installed, the bundled default embedding model supports local offline operation. An external embedding API or a different downloaded model is optional. Your AI client's own connection requirements still apply.</p>
 </section>
 
-<section class="wrap" style="text-align:center;margin-top:2rem;">
-  <span style="display:inline-block;text-align:center;font-family:system-ui,sans-serif;line-height:1;"><a href="https://tools.launchllama.co/products/vaultic?utm_source=badge&utm_medium=referral" target="_blank" rel="noopener noreferrer" style="display:block;line-height:0;"><img src="https://tools.launchllama.co/featured-badge.png?v=2" alt="Launch Llama Tools" width="200" height="52" style="display:block;border:0;margin:0 auto;" /></a><a href="https://mcpshelf.co/?utm_source=badge&utm_medium=referral" target="_blank" rel="noopener noreferrer" style="display:block;margin-top:-2px;padding-top:0;font-size:7px;font-weight:600;color:#888;text-decoration:none;line-height:1;letter-spacing:0.02em;">Launch your MCP</a></span>
+
+<section class="wrap" aria-labelledby="tools-h">
+  <p class="eyebrow">For the technical details</p>
+  <h2 id="tools-h">A complete memory toolkit, a compact daily interface.</h2>
+  <p>Vaultic 0.1.5 exposes 111 MCP tools in its full profile. The default profile advertises 35, including two tools for discovering and calling the rest. Your client controls how tool descriptions enter its context.</p>
+  <div class="grid">
+    <div class="card"><h3><code>remember</code> and <code>recall</code></h3><p>Save useful facts and find them again through semantic and encrypted keyword search.</p></div>
+    <div class="card"><h3><code>retrieve_context</code></h3><p>Bring relevant memories, graph context and available source evidence into the current task.</p></div>
+    <div class="card"><h3><code>open_gui</code></h3><p>Let your agent open the desktop viewer so you can inspect your local memory.</p></div>
+  </div>
+</section>
+<section class="wrap" aria-labelledby="what-h">
+  <h2 id="what-h">Practical details before you buy</h2>
+  <div class="two-col">
+    <div id="security"><h3>Privacy and backups</h3><ul class="plain">
+      <li>Supported content fields are encrypted by default; metadata, embeddings and keyed keyword fingerprints are not a promise of whole-database encryption.</li>
+      <li>The keyword index reveals patterns such as shared terms, even though it does not store readable words. Word-form and prefix matching broaden those patterns.</li>
+      <li>Back up all configured local stores and the separate encryption keys. We cannot recover missing keys.</li>
+      <li>Your client may send retrieved context to its model provider. External embedding APIs send content to the provider you choose.</li>
+    </ul><p><a href="/legal/privacy/">Read the privacy policy &rarr;</a></p></div>
+    <div id="limits"><h3>Compatibility and limits</h3><ul class="plain">
+      <li>Developed and tested on Linux. Windows is planned; macOS is untested.</li>
+      <li>Designed for one local user. Persona/user scopes do not provide multi-tenant authorisation.</li>
+      <li>Recall, de-duplication and contradiction detection use heuristics. They do not guarantee complete recall or understanding.</li>
+      <li>Encrypted keyword search supports English word-form matching and bounded prefixes, not positional phrase search.</li>
+      <li>Automatic capture depends on host events and configuration. Interruptions or unavailable storage can leave gaps.</li>
+    </ul><p><a href="/benchmarks/">Read the historical retrieval results and their limits &rarr;</a></p></div>
+  </div>
+</section>
+
+<section class="wrap purchase-band" aria-labelledby="buy-h">
+  <div><p class="eyebrow">Vaultic 0.1.5</p><h2 id="buy-h">Give your next session a starting point.</h2><p>€135 one-off · All 0.x updates included · <a href="/legal/refund/">14-day refund policy</a></p></div>
+  <div><a class="btn" href="https://morrisonsaisolutions.lemonsqueezy.com/checkout/buy/6b51fced-3ffa-4a02-8e04-1caddf4cd045">Buy now, €135</a><p><a href="/support/">Questions before buying?</a></p></div>
+</section>
+
+<section class="wrap directory-badge" aria-label="Directory listing">
+  <a href="https://tools.launchllama.co/products/vaultic?utm_source=badge&amp;utm_medium=referral" target="_blank" rel="noopener noreferrer"><img src="https://tools.launchllama.co/featured-badge.png?v=2" alt="Launch Llama Tools" width="200" height="52" loading="lazy"></a>
 </section>
 
 </main>
@@ -278,7 +215,7 @@
     <div>&copy; 2026 Morrisons AI Solutions. <a href="mailto:morrisonsaisolutions@gmail.com">morrisonsaisolutions@gmail.com</a><br><span class="foot-tag">Intelligence today &middot; A brighter tomorrow</span></div>
     <ul aria-label="Legal"><li><a href="/legal/eula/">End user licence</a></li><li><a href="/legal/privacy/">Privacy policy</a></li><li><a href="/legal/refund/">Refund policy</a></li><li><a href="/legal/notice/">Legal notice</a></li></ul>
   </div>
-<div class="wrap"><button type="button" data-analytics-settings>Analytics preferences</button></div>
+  <div class="wrap"><button type="button" data-analytics-settings>Analytics preferences</button></div>
 </footer>
 </body>
 </html>
